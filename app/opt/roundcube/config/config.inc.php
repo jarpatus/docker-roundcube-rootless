@@ -58,10 +58,10 @@ $config['product_name'] = 'Roundcube Webmail';
 $config['des_key'] = 'rcmail-!24ByteDESkey*Str';
 
 // List of active plugins (in plugins/ directory)
-$config['plugins'] = [
-    'archive',
-    'zipdownload',
-];
+//$config['plugins'] = [
+//    'archive',
+//    'zipdownload',
+//];
 
 // skin name: folder from skins/
 $config['skin'] = 'elastic';

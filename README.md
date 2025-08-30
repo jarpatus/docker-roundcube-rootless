@@ -15,14 +15,32 @@ services:
     user: 34093:34093
     environment:
       - IMAP_HOST=ssl://imaps.example.com
+      - PLUGINS=multiaccount_switcher
     volumes:
       - ./data:/data
+      - ./config:/config
 ```
 
 ## Environment
 Mandatory environment variables:
-* ```IMAP_HOST``` - IMAP server e.g. imap.example.com or ssl://imaps.example.com for SSL 
+* ```IMAP_HOST``` - IMAP server e.g. imap.example.com or ssl://imaps.example.com for SSL ,
 
+Optional environment variables:
+* ```PLUGINS``` - Whitespace separated list of additional plugins to load.
+	
 ## Mounts
 Optional mounts:
-* ```/data``` - SQLite database for preserving settings.
+* ```/config``` - Additional configuration like plugins to be loaded on container start 
+* ```/data``` - SQLite database location for preserving settings.
+
+# Plugins
+In order to load additional plugins use ```PLUGINS``` environment variable to list such plugins. In order to use external plugins add 
+it to ``PLUGINS``` put ```plugins/plugin_name``` under ```/config``` using mount so it should look like this:
+
+
+```
+/config
+/config/plugins
+/config/plugins/multiaccount_switcher
+/config/plugins/multiaccount_switcher/...
+```
