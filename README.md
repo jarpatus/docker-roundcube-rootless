@@ -35,7 +35,7 @@ Optional mounts:
 
 # Plugins
 In order to load additional plugins use ```PLUGINS``` environment variable to list such plugins. In order to use external plugins add 
-it to ``PLUGINS``` put ```plugins/plugin_name``` under ```/config``` using mount so it should look like this:
+it to ```PLUGINS``` and store ```plugins/plugin_name``` under ```/config``` using mount so it should look like this:
 
 
 ```
