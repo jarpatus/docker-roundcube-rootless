@@ -14,18 +14,26 @@ services:
     restart: always
     user: 34093:34093
     environment:
-      - IMAP_HOST=ssl://imaps.example.com
+      - IMAP_HOST=ssl://imaps.example.com:143
+      - SMTP_HOST=ssl://smtp.example.com:587
+      - SMTP_AUTH_TYPE=PLAIN
+      - SMTP_USER=user
+      - SMTP_PASS=pass
       - PLUGINS=multiaccount_switcher
     volumes:
-      - ./data:/data
       - ./config:/config
+      - ./data:/data
 ```
 
 ## Environment
 Mandatory environment variables:
-* ```IMAP_HOST``` - IMAP server e.g. imap.example.com or ssl://imaps.example.com for SSL ,
+* ```IMAP_HOST``` - IMAP server e.g. imap.example.com or ssl://imaps.example.com for SSL
+* ```SMTP_HOST``` - SMTP server e.g. smtp.example.com
 
 Optional environment variables:
+* ```SMTP_AUTH_TYPE``` - SMTP authentication type e.g. PLAIN
+* ```SMTP_USER``` - SMTP username
+* ```SMTP_PASS``` - SMTP password
 * ```PLUGINS``` - Whitespace separated list of additional plugins to load.
 	
 ## Mounts

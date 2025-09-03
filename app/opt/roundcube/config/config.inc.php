@@ -34,15 +34,15 @@ $config['db_dsnw'] = 'sqlite:////data/sqlite.db?mode=0646';
 
 // SMTP server host (for sending mails).
 // See defaults.inc.php for the option description.
-$config['smtp_host'] = 'localhost:587';
+//$config['smtp_host'] = 'localhost:587';
 
 // SMTP username (if required) if you use %u as the username Roundcube
 // will use the current username for login
-$config['smtp_user'] = '%u';
+//$config['smtp_user'] = '%u';
 
 // SMTP password (if required) if you use %p as the password Roundcube
 // will use the current user's password for login
-$config['smtp_pass'] = '%p';
+//$config['smtp_pass'] = '%p';
 
 // provide an URL where a user can get support for this Roundcube installation
 // PLEASE DO NOT LINK TO THE ROUNDCUBE.NET WEBSITE HERE!
@@ -68,4 +68,3 @@ $config['skin'] = 'elastic';
 
 // log driver:  'syslog', 'stdout' or 'file'.
 $config['log_driver'] = 'stdout';
-
