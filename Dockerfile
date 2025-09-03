@@ -45,6 +45,7 @@ RUN rm -rf /opt/roundcube/installer
 
 # Copy application files to the image
 RUN mkdir -p /config /data
+RUN chown roundcube:roundcube /data
 COPY ./app /app
 RUN tar c -C /app etc | tar x -v -C /
 
